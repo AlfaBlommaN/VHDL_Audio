@@ -1,0 +1,1222 @@
+TimeQuest Timing Analyzer report for Sound
+Sat Sep 27 16:21:28 2014
+Quartus II 64-Bit Version 12.1 Build 243 01/31/2013 Service Pack 1.33 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'clk'
+ 12. Slow Model Hold: 'clk'
+ 13. Slow Model Minimum Pulse Width: 'clk'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Fast Model Setup Summary
+ 19. Fast Model Hold Summary
+ 20. Fast Model Recovery Summary
+ 21. Fast Model Removal Summary
+ 22. Fast Model Minimum Pulse Width Summary
+ 23. Fast Model Setup: 'clk'
+ 24. Fast Model Hold: 'clk'
+ 25. Fast Model Minimum Pulse Width: 'clk'
+ 26. Setup Times
+ 27. Hold Times
+ 28. Clock to Output Times
+ 29. Minimum Clock to Output Times
+ 30. Multicorner Timing Analysis Summary
+ 31. Setup Times
+ 32. Hold Times
+ 33. Clock to Output Times
+ 34. Minimum Clock to Output Times
+ 35. Setup Transfers
+ 36. Hold Transfers
+ 37. Report TCCS
+ 38. Report RSKM
+ 39. Unconstrained Paths
+ 40. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2012 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                        ;
++--------------------+---------------------------------------------------------------------+
+; Quartus II Version ; Version 12.1 Build 243 01/31/2013 Service Pack 1.33 SJ Full Version ;
+; Revision Name      ; Sound                                                               ;
+; Device Family      ; Cyclone II                                                          ;
+; Device Name        ; EP2C35F672C6                                                        ;
+; Timing Models      ; Final                                                               ;
+; Delay Model        ; Combined                                                            ;
+; Rise/Fall Delays   ; Unavailable                                                         ;
++--------------------+---------------------------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 3           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2-3 processors         ; < 0.1%      ;
+;     4 processors           ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++------------------------------------------------+
+; Slow Model Fmax Summary                        ;
++----------+-----------------+------------+------+
+; Fmax     ; Restricted Fmax ; Clock Name ; Note ;
++----------+-----------------+------------+------+
+; 76.7 MHz ; 76.7 MHz        ; clk        ;      ;
++----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------+
+; Slow Model Setup Summary        ;
++-------+---------+---------------+
+; Clock ; Slack   ; End Point TNS ;
++-------+---------+---------------+
+; clk   ; -12.038 ; -1591.936     ;
++-------+---------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.391 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.423 ; -420.224              ;
++-------+--------+-----------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk'                                                                                                                   ;
++---------+----------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node                  ; To Node                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+----------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
+; -12.038 ; Application:instApp|am[5]  ; Application:instApp|lack[39] ; clk          ; clk         ; 1.000        ; 0.012      ; 13.086     ;
+; -11.972 ; Application:instApp|am[9]  ; Application:instApp|lack[39] ; clk          ; clk         ; 1.000        ; 0.012      ; 13.020     ;
+; -11.967 ; Application:instApp|am[5]  ; Application:instApp|lack[38] ; clk          ; clk         ; 1.000        ; 0.012      ; 13.015     ;
+; -11.901 ; Application:instApp|am[9]  ; Application:instApp|lack[38] ; clk          ; clk         ; 1.000        ; 0.012      ; 12.949     ;
+; -11.900 ; Application:instApp|am[6]  ; Application:instApp|lack[39] ; clk          ; clk         ; 1.000        ; 0.013      ; 12.949     ;
+; -11.896 ; Application:instApp|am[5]  ; Application:instApp|lack[37] ; clk          ; clk         ; 1.000        ; 0.012      ; 12.944     ;
+; -11.857 ; Application:instApp|am[7]  ; Application:instApp|lack[39] ; clk          ; clk         ; 1.000        ; 0.013      ; 12.906     ;
+; -11.830 ; Application:instApp|am[9]  ; Application:instApp|lack[37] ; clk          ; clk         ; 1.000        ; 0.012      ; 12.878     ;
+; -11.829 ; Application:instApp|am[6]  ; Application:instApp|lack[38] ; clk          ; clk         ; 1.000        ; 0.013      ; 12.878     ;
+; -11.825 ; Application:instApp|am[5]  ; Application:instApp|lack[36] ; clk          ; clk         ; 1.000        ; 0.012      ; 12.873     ;
+; -11.786 ; Application:instApp|am[7]  ; Application:instApp|lack[38] ; clk          ; clk         ; 1.000        ; 0.013      ; 12.835     ;
+; -11.779 ; Application:instApp|am[8]  ; Application:instApp|lack[39] ; clk          ; clk         ; 1.000        ; 0.013      ; 12.828     ;
+; -11.759 ; Application:instApp|am[9]  ; Application:instApp|lack[36] ; clk          ; clk         ; 1.000        ; 0.012      ; 12.807     ;
+; -11.758 ; Application:instApp|am[6]  ; Application:instApp|lack[37] ; clk          ; clk         ; 1.000        ; 0.013      ; 12.807     ;
+; -11.715 ; Application:instApp|am[7]  ; Application:instApp|lack[37] ; clk          ; clk         ; 1.000        ; 0.013      ; 12.764     ;
+; -11.708 ; Application:instApp|am[8]  ; Application:instApp|lack[38] ; clk          ; clk         ; 1.000        ; 0.013      ; 12.757     ;
+; -11.687 ; Application:instApp|am[6]  ; Application:instApp|lack[36] ; clk          ; clk         ; 1.000        ; 0.013      ; 12.736     ;
+; -11.686 ; Application:instApp|al[4]  ; Application:instApp|lack[39] ; clk          ; clk         ; 1.000        ; 0.020      ; 12.742     ;
+; -11.666 ; Application:instApp|am[5]  ; Application:instApp|lack[35] ; clk          ; clk         ; 1.000        ; 0.012      ; 12.714     ;
+; -11.659 ; Application:instApp|am[8]  ; Application:instApp|rack[39] ; clk          ; clk         ; 1.000        ; 0.004      ; 12.699     ;
+; -11.650 ; Application:instApp|al[5]  ; Application:instApp|lack[39] ; clk          ; clk         ; 1.000        ; 0.020      ; 12.706     ;
+; -11.644 ; Application:instApp|am[7]  ; Application:instApp|lack[36] ; clk          ; clk         ; 1.000        ; 0.013      ; 12.693     ;
+; -11.637 ; Application:instApp|am[8]  ; Application:instApp|lack[37] ; clk          ; clk         ; 1.000        ; 0.013      ; 12.686     ;
+; -11.616 ; Application:instApp|ar[5]  ; Application:instApp|rack[39] ; clk          ; clk         ; 1.000        ; 0.003      ; 12.655     ;
+; -11.615 ; Application:instApp|al[4]  ; Application:instApp|lack[38] ; clk          ; clk         ; 1.000        ; 0.020      ; 12.671     ;
+; -11.600 ; Application:instApp|am[9]  ; Application:instApp|lack[35] ; clk          ; clk         ; 1.000        ; 0.012      ; 12.648     ;
+; -11.595 ; Application:instApp|am[5]  ; Application:instApp|lack[34] ; clk          ; clk         ; 1.000        ; 0.012      ; 12.643     ;
+; -11.588 ; Application:instApp|am[8]  ; Application:instApp|rack[38] ; clk          ; clk         ; 1.000        ; 0.004      ; 12.628     ;
+; -11.588 ; Application:instApp|am[6]  ; Application:instApp|rack[39] ; clk          ; clk         ; 1.000        ; 0.004      ; 12.628     ;
+; -11.579 ; Application:instApp|al[5]  ; Application:instApp|lack[38] ; clk          ; clk         ; 1.000        ; 0.020      ; 12.635     ;
+; -11.566 ; Application:instApp|am[8]  ; Application:instApp|lack[36] ; clk          ; clk         ; 1.000        ; 0.013      ; 12.615     ;
+; -11.551 ; Application:instApp|am[10] ; Application:instApp|lack[39] ; clk          ; clk         ; 1.000        ; 0.013      ; 12.600     ;
+; -11.545 ; Application:instApp|ar[5]  ; Application:instApp|rack[38] ; clk          ; clk         ; 1.000        ; 0.003      ; 12.584     ;
+; -11.544 ; Application:instApp|al[4]  ; Application:instApp|lack[37] ; clk          ; clk         ; 1.000        ; 0.020      ; 12.600     ;
+; -11.539 ; Application:instApp|ar[4]  ; Application:instApp|rack[39] ; clk          ; clk         ; 1.000        ; 0.003      ; 12.578     ;
+; -11.531 ; Application:instApp|am[11] ; Application:instApp|lack[39] ; clk          ; clk         ; 1.000        ; 0.013      ; 12.580     ;
+; -11.529 ; Application:instApp|am[9]  ; Application:instApp|lack[34] ; clk          ; clk         ; 1.000        ; 0.012      ; 12.577     ;
+; -11.528 ; Application:instApp|am[6]  ; Application:instApp|lack[35] ; clk          ; clk         ; 1.000        ; 0.013      ; 12.577     ;
+; -11.524 ; Application:instApp|am[5]  ; Application:instApp|lack[33] ; clk          ; clk         ; 1.000        ; 0.012      ; 12.572     ;
+; -11.517 ; Application:instApp|am[8]  ; Application:instApp|rack[37] ; clk          ; clk         ; 1.000        ; 0.004      ; 12.557     ;
+; -11.517 ; Application:instApp|am[6]  ; Application:instApp|rack[38] ; clk          ; clk         ; 1.000        ; 0.004      ; 12.557     ;
+; -11.508 ; Application:instApp|al[5]  ; Application:instApp|lack[37] ; clk          ; clk         ; 1.000        ; 0.020      ; 12.564     ;
+; -11.505 ; Application:instApp|am[7]  ; Application:instApp|rack[39] ; clk          ; clk         ; 1.000        ; 0.004      ; 12.545     ;
+; -11.500 ; Application:instApp|am[5]  ; Application:instApp|rack[39] ; clk          ; clk         ; 1.000        ; 0.003      ; 12.539     ;
+; -11.485 ; Application:instApp|am[7]  ; Application:instApp|lack[35] ; clk          ; clk         ; 1.000        ; 0.013      ; 12.534     ;
+; -11.480 ; Application:instApp|am[10] ; Application:instApp|lack[38] ; clk          ; clk         ; 1.000        ; 0.013      ; 12.529     ;
+; -11.474 ; Application:instApp|ar[5]  ; Application:instApp|rack[37] ; clk          ; clk         ; 1.000        ; 0.003      ; 12.513     ;
+; -11.473 ; Application:instApp|al[4]  ; Application:instApp|lack[36] ; clk          ; clk         ; 1.000        ; 0.020      ; 12.529     ;
+; -11.468 ; Application:instApp|ar[4]  ; Application:instApp|rack[38] ; clk          ; clk         ; 1.000        ; 0.003      ; 12.507     ;
+; -11.460 ; Application:instApp|am[11] ; Application:instApp|lack[38] ; clk          ; clk         ; 1.000        ; 0.013      ; 12.509     ;
+; -11.458 ; Application:instApp|am[9]  ; Application:instApp|lack[33] ; clk          ; clk         ; 1.000        ; 0.012      ; 12.506     ;
+; -11.457 ; Application:instApp|am[6]  ; Application:instApp|lack[34] ; clk          ; clk         ; 1.000        ; 0.013      ; 12.506     ;
+; -11.453 ; Application:instApp|am[5]  ; Application:instApp|lack[32] ; clk          ; clk         ; 1.000        ; 0.012      ; 12.501     ;
+; -11.446 ; Application:instApp|am[8]  ; Application:instApp|rack[36] ; clk          ; clk         ; 1.000        ; 0.004      ; 12.486     ;
+; -11.446 ; Application:instApp|am[6]  ; Application:instApp|rack[37] ; clk          ; clk         ; 1.000        ; 0.004      ; 12.486     ;
+; -11.437 ; Application:instApp|al[5]  ; Application:instApp|lack[36] ; clk          ; clk         ; 1.000        ; 0.020      ; 12.493     ;
+; -11.434 ; Application:instApp|am[7]  ; Application:instApp|rack[38] ; clk          ; clk         ; 1.000        ; 0.004      ; 12.474     ;
+; -11.429 ; Application:instApp|am[5]  ; Application:instApp|rack[38] ; clk          ; clk         ; 1.000        ; 0.003      ; 12.468     ;
+; -11.414 ; Application:instApp|am[7]  ; Application:instApp|lack[34] ; clk          ; clk         ; 1.000        ; 0.013      ; 12.463     ;
+; -11.409 ; Application:instApp|am[10] ; Application:instApp|lack[37] ; clk          ; clk         ; 1.000        ; 0.013      ; 12.458     ;
+; -11.407 ; Application:instApp|am[8]  ; Application:instApp|lack[35] ; clk          ; clk         ; 1.000        ; 0.013      ; 12.456     ;
+; -11.407 ; Application:instApp|am[11] ; Application:instApp|rack[39] ; clk          ; clk         ; 1.000        ; 0.004      ; 12.447     ;
+; -11.403 ; Application:instApp|ar[5]  ; Application:instApp|rack[36] ; clk          ; clk         ; 1.000        ; 0.003      ; 12.442     ;
+; -11.397 ; Application:instApp|ar[4]  ; Application:instApp|rack[37] ; clk          ; clk         ; 1.000        ; 0.003      ; 12.436     ;
+; -11.396 ; Application:instApp|al[6]  ; Application:instApp|lack[39] ; clk          ; clk         ; 1.000        ; 0.020      ; 12.452     ;
+; -11.389 ; Application:instApp|am[11] ; Application:instApp|lack[37] ; clk          ; clk         ; 1.000        ; 0.013      ; 12.438     ;
+; -11.387 ; Application:instApp|am[9]  ; Application:instApp|lack[32] ; clk          ; clk         ; 1.000        ; 0.012      ; 12.435     ;
+; -11.386 ; Application:instApp|am[6]  ; Application:instApp|lack[33] ; clk          ; clk         ; 1.000        ; 0.013      ; 12.435     ;
+; -11.382 ; Application:instApp|am[5]  ; Application:instApp|lack[31] ; clk          ; clk         ; 1.000        ; 0.012      ; 12.430     ;
+; -11.375 ; Application:instApp|am[6]  ; Application:instApp|rack[36] ; clk          ; clk         ; 1.000        ; 0.004      ; 12.415     ;
+; -11.363 ; Application:instApp|am[7]  ; Application:instApp|rack[37] ; clk          ; clk         ; 1.000        ; 0.004      ; 12.403     ;
+; -11.358 ; Application:instApp|am[5]  ; Application:instApp|rack[37] ; clk          ; clk         ; 1.000        ; 0.003      ; 12.397     ;
+; -11.356 ; Application:instApp|ar[6]  ; Application:instApp|rack[39] ; clk          ; clk         ; 1.000        ; 0.003      ; 12.395     ;
+; -11.355 ; Application:instApp|ar[8]  ; Application:instApp|rack[39] ; clk          ; clk         ; 1.000        ; 0.003      ; 12.394     ;
+; -11.343 ; Application:instApp|am[7]  ; Application:instApp|lack[33] ; clk          ; clk         ; 1.000        ; 0.013      ; 12.392     ;
+; -11.338 ; Application:instApp|am[10] ; Application:instApp|lack[36] ; clk          ; clk         ; 1.000        ; 0.013      ; 12.387     ;
+; -11.336 ; Application:instApp|am[8]  ; Application:instApp|lack[34] ; clk          ; clk         ; 1.000        ; 0.013      ; 12.385     ;
+; -11.336 ; Application:instApp|am[11] ; Application:instApp|rack[38] ; clk          ; clk         ; 1.000        ; 0.004      ; 12.376     ;
+; -11.326 ; Application:instApp|ar[4]  ; Application:instApp|rack[36] ; clk          ; clk         ; 1.000        ; 0.003      ; 12.365     ;
+; -11.325 ; Application:instApp|al[7]  ; Application:instApp|lack[39] ; clk          ; clk         ; 1.000        ; 0.020      ; 12.381     ;
+; -11.325 ; Application:instApp|al[6]  ; Application:instApp|lack[38] ; clk          ; clk         ; 1.000        ; 0.020      ; 12.381     ;
+; -11.318 ; Application:instApp|am[11] ; Application:instApp|lack[36] ; clk          ; clk         ; 1.000        ; 0.013      ; 12.367     ;
+; -11.316 ; Application:instApp|am[9]  ; Application:instApp|lack[31] ; clk          ; clk         ; 1.000        ; 0.012      ; 12.364     ;
+; -11.315 ; Application:instApp|am[6]  ; Application:instApp|lack[32] ; clk          ; clk         ; 1.000        ; 0.013      ; 12.364     ;
+; -11.314 ; Application:instApp|al[4]  ; Application:instApp|lack[35] ; clk          ; clk         ; 1.000        ; 0.020      ; 12.370     ;
+; -11.311 ; Application:instApp|am[5]  ; Application:instApp|lack[30] ; clk          ; clk         ; 1.000        ; 0.012      ; 12.359     ;
+; -11.304 ; Application:instApp|am[12] ; Application:instApp|rack[39] ; clk          ; clk         ; 1.000        ; 0.004      ; 12.344     ;
+; -11.292 ; Application:instApp|am[7]  ; Application:instApp|rack[36] ; clk          ; clk         ; 1.000        ; 0.004      ; 12.332     ;
+; -11.287 ; Application:instApp|am[8]  ; Application:instApp|rack[35] ; clk          ; clk         ; 1.000        ; 0.004      ; 12.327     ;
+; -11.287 ; Application:instApp|am[5]  ; Application:instApp|rack[36] ; clk          ; clk         ; 1.000        ; 0.003      ; 12.326     ;
+; -11.285 ; Application:instApp|ar[7]  ; Application:instApp|rack[39] ; clk          ; clk         ; 1.000        ; 0.003      ; 12.324     ;
+; -11.285 ; Application:instApp|ar[6]  ; Application:instApp|rack[38] ; clk          ; clk         ; 1.000        ; 0.003      ; 12.324     ;
+; -11.284 ; Application:instApp|ar[8]  ; Application:instApp|rack[38] ; clk          ; clk         ; 1.000        ; 0.003      ; 12.323     ;
+; -11.278 ; Application:instApp|al[5]  ; Application:instApp|lack[35] ; clk          ; clk         ; 1.000        ; 0.020      ; 12.334     ;
+; -11.272 ; Application:instApp|am[7]  ; Application:instApp|lack[32] ; clk          ; clk         ; 1.000        ; 0.013      ; 12.321     ;
+; -11.265 ; Application:instApp|am[8]  ; Application:instApp|lack[33] ; clk          ; clk         ; 1.000        ; 0.013      ; 12.314     ;
+; -11.265 ; Application:instApp|am[11] ; Application:instApp|rack[37] ; clk          ; clk         ; 1.000        ; 0.004      ; 12.305     ;
+; -11.254 ; Application:instApp|al[7]  ; Application:instApp|lack[38] ; clk          ; clk         ; 1.000        ; 0.020      ; 12.310     ;
+; -11.254 ; Application:instApp|al[6]  ; Application:instApp|lack[37] ; clk          ; clk         ; 1.000        ; 0.020      ; 12.310     ;
+; -11.245 ; Application:instApp|am[9]  ; Application:instApp|lack[30] ; clk          ; clk         ; 1.000        ; 0.012      ; 12.293     ;
++---------+----------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk'                                                                                                                                                                      ;
++-------+-------------------------------------------------------+-------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                             ; To Node                                               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------------------------+-------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.391 ; SndDriver:instSndDrv|Ctrl:inst|cntr[0]                ; SndDriver:instSndDrv|Ctrl:inst|cntr[0]                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; SndDriver:instSndDrv|Ctrl:inst|BitCnti[0]             ; SndDriver:instSndDrv|Ctrl:inst|BitCnti[0]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Application:instApp|xr[2]                             ; Application:instApp|xr[2]                             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Application:instApp|x[1]                              ; Application:instApp|x[1]                              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; SndDriver:instSndDrv|Ctrl:inst|SCCnti[0]              ; SndDriver:instSndDrv|Ctrl:inst|SCCnti[0]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; SndDriver:instSndDrv|Ctrl:inst|SCCnti[1]              ; SndDriver:instSndDrv|Ctrl:inst|SCCnti[1]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.513 ; Application:instApp|noise[3]                          ; Application:instApp|noise[2]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.779      ;
+; 0.516 ; Application:instApp|noise[1]                          ; Application:instApp|noise[0]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.782      ;
+; 0.516 ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[11] ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.782      ;
+; 0.517 ; Application:instApp|noise[0]                          ; Application:instApp|noise[15]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.783      ;
+; 0.520 ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[2]  ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.786      ;
+; 0.520 ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[1]  ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.786      ;
+; 0.522 ; Application:instApp|PSAC:psac_inst|inv_res[1]         ; Application:instApp|PSAC:psac_inst|inv_res[2]         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.788      ;
+; 0.522 ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[1]  ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.788      ;
+; 0.523 ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[14] ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.789      ;
+; 0.523 ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[0]   ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[1]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.789      ;
+; 0.523 ; SndDriver:instSndDrv|Channel_Mod:inst_left|TXReg[2]   ; SndDriver:instSndDrv|Channel_Mod:inst_left|TXReg[3]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.789      ;
+; 0.523 ; SndDriver:instSndDrv|Channel_Mod:inst_left|TXReg[7]   ; SndDriver:instSndDrv|Channel_Mod:inst_left|TXReg[8]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.789      ;
+; 0.523 ; Application:instApp|noise[4]                          ; Application:instApp|RDAC[0]                           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.789      ;
+; 0.523 ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[9]  ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.789      ;
+; 0.524 ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[4]   ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[5]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.790      ;
+; 0.524 ; SndDriver:instSndDrv|Channel_Mod:inst_left|TXReg[8]   ; SndDriver:instSndDrv|Channel_Mod:inst_left|TXReg[9]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.790      ;
+; 0.524 ; SndDriver:instSndDrv|Channel_Mod:inst_left|TXReg[12]  ; SndDriver:instSndDrv|Channel_Mod:inst_left|TXReg[13]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.790      ;
+; 0.524 ; Application:instApp|lack[29]                          ; Application:instApp|LEDR[10]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.790      ;
+; 0.525 ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[2]   ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[3]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.791      ;
+; 0.525 ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[5]   ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[6]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.791      ;
+; 0.525 ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[12]  ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[13]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.791      ;
+; 0.525 ; Application:instApp|LDAC[5]                           ; SndDriver:instSndDrv|Channel_Mod:inst_left|TXReg[5]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.791      ;
+; 0.525 ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[6]  ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.791      ;
+; 0.525 ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[10] ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.791      ;
+; 0.526 ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[8]  ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.792      ;
+; 0.526 ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[13] ; SndDriver:instSndDrv|Channel_Mod:inst_right|ADCi[13]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.792      ;
+; 0.526 ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[14]  ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[15]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.792      ;
+; 0.526 ; SndDriver:instSndDrv|Channel_Mod:inst_left|TXReg[14]  ; SndDriver:instSndDrv|Channel_Mod:inst_left|TXReg[15]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.792      ;
+; 0.527 ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[3]   ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[4]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.793      ;
+; 0.528 ; Application:instApp|x[15]                             ; Application:instApp|PSAC:psac_inst|inv_res[1]         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.794      ;
+; 0.528 ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[1]   ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.794      ;
+; 0.528 ; Application:instApp|rack[9]                           ; Application:instApp|LEDR[0]                           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.794      ;
+; 0.528 ; Application:instApp|lack[9]                           ; Application:instApp|LEDR[17]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.794      ;
+; 0.529 ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[8]   ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[9]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.795      ;
+; 0.529 ; Application:instApp|noise[6]                          ; Application:instApp|LDAC[2]                           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.795      ;
+; 0.530 ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[7]   ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[8]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.796      ;
+; 0.531 ; Application:instApp|xr[15]                            ; Application:instApp|xr[15]                            ; clk          ; clk         ; 0.000        ; 0.000      ; 0.797      ;
+; 0.531 ; Application:instApp|xm[15]                            ; Application:instApp|xm[15]                            ; clk          ; clk         ; 0.000        ; 0.000      ; 0.797      ;
+; 0.531 ; Application:instApp|xl[15]                            ; Application:instApp|xl[15]                            ; clk          ; clk         ; 0.000        ; 0.000      ; 0.797      ;
+; 0.531 ; Application:instApp|noise[6]                          ; Application:instApp|noise[5]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.797      ;
+; 0.532 ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[4]  ; SndDriver:instSndDrv|Channel_Mod:inst_right|ADCi[4]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.798      ;
+; 0.532 ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[10]  ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[11]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.798      ;
+; 0.532 ; Application:instApp|lack[33]                          ; Application:instApp|LEDR[9]                           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.798      ;
+; 0.533 ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[10] ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.799      ;
+; 0.533 ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[12] ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.799      ;
+; 0.533 ; Application:instApp|noise[13]                         ; Application:instApp|noise[12]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.799      ;
+; 0.533 ; Application:instApp|noise[10]                         ; Application:instApp|RDAC[6]                           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.799      ;
+; 0.534 ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[4]  ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.800      ;
+; 0.535 ; Application:instApp|noise[13]                         ; Application:instApp|RDAC[9]                           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.801      ;
+; 0.542 ; Application:instApp|noise[11]                         ; Application:instApp|RDAC[7]                           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.808      ;
+; 0.543 ; SndDriver:instSndDrv|Ctrl:inst|BitCnti[4]             ; SndDriver:instSndDrv|Ctrl:inst|BitCnti[4]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.809      ;
+; 0.545 ; Application:instApp|noise[11]                         ; Application:instApp|noise[10]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.811      ;
+; 0.546 ; Application:instApp|noise[12]                         ; Application:instApp|noise[11]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.812      ;
+; 0.546 ; Application:instApp|noise[12]                         ; Application:instApp|LDAC[8]                           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.812      ;
+; 0.552 ; SndDriver:instSndDrv|Ctrl:inst|SCCnti[0]              ; SndDriver:instSndDrv|Ctrl:inst|SCCnti[1]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.818      ;
+; 0.565 ; SndDriver:instSndDrv|Ctrl:inst|lrseli                 ; Application:instApp|lrsel_old                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.831      ;
+; 0.565 ; SndDriver:instSndDrv|Ctrl:inst|lrseli                 ; Application:instApp|lrsel_change                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.831      ;
+; 0.625 ; Application:instApp|rack[8]                           ; Application:instApp|LEDR[0]                           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.891      ;
+; 0.625 ; Application:instApp|lack[8]                           ; Application:instApp|LEDR[17]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.891      ;
+; 0.628 ; Application:instApp|lack[32]                          ; Application:instApp|LEDR[9]                           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.894      ;
+; 0.637 ; Application:instApp|lack[30]                          ; Application:instApp|LEDR[10]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.903      ;
+; 0.649 ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[5]  ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.915      ;
+; 0.652 ; SndDriver:instSndDrv|Channel_Mod:inst_left|TXReg[11]  ; SndDriver:instSndDrv|Channel_Mod:inst_left|TXReg[12]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.918      ;
+; 0.652 ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[7]  ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.918      ;
+; 0.653 ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[13] ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.919      ;
+; 0.654 ; SndDriver:instSndDrv|Channel_Mod:inst_left|TXReg[0]   ; SndDriver:instSndDrv|Channel_Mod:inst_left|TXReg[1]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.920      ;
+; 0.655 ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[14] ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.921      ;
+; 0.656 ; SndDriver:instSndDrv|Channel_Mod:inst_left|TXReg[3]   ; SndDriver:instSndDrv|Channel_Mod:inst_left|TXReg[4]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.922      ;
+; 0.657 ; Application:instApp|noise[2]                          ; Application:instApp|noise[1]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.923      ;
+; 0.657 ; SndDriver:instSndDrv|Channel_Mod:inst_left|TXReg[10]  ; SndDriver:instSndDrv|Channel_Mod:inst_left|TXReg[11]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.923      ;
+; 0.660 ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[15]  ; SndDriver:instSndDrv|Channel_Mod:inst_left|ADCi[15]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.926      ;
+; 0.660 ; Application:instApp|lrsel_old                         ; Application:instApp|lrsel_change                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.926      ;
+; 0.666 ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[9]   ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[10]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.932      ;
+; 0.666 ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[13]  ; SndDriver:instSndDrv|Channel_Mod:inst_left|ADCi[13]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.932      ;
+; 0.667 ; Application:instApp|PSAC:psac_inst|Res_2[6]           ; Application:instApp|am[6]                             ; clk          ; clk         ; 0.000        ; 0.002      ; 0.935      ;
+; 0.668 ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[13]  ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[14]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.934      ;
+; 0.670 ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[3]  ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.936      ;
+; 0.670 ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[11] ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.936      ;
+; 0.670 ; Application:instApp|noise[5]                          ; Application:instApp|noise[4]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.936      ;
+; 0.672 ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[7]  ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.938      ;
+; 0.672 ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[11]  ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[12]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.938      ;
+; 0.673 ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[5]  ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.939      ;
+; 0.673 ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[6]  ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.939      ;
+; 0.673 ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[9]  ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.939      ;
+; 0.673 ; Application:instApp|RDAC[14]                          ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[14] ; clk          ; clk         ; 0.000        ; -0.004     ; 0.935      ;
+; 0.693 ; Application:instApp|LDAC[4]                           ; SndDriver:instSndDrv|Channel_Mod:inst_left|TXReg[4]   ; clk          ; clk         ; 0.000        ; 0.004      ; 0.963      ;
+; 0.708 ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[6]   ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[7]   ; clk          ; clk         ; 0.000        ; -0.004     ; 0.970      ;
+; 0.708 ; Application:instApp|RDAC[8]                           ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[8]  ; clk          ; clk         ; 0.000        ; -0.004     ; 0.970      ;
+; 0.709 ; Application:instApp|PSAC:psac_inst|Res_2[7]           ; Application:instApp|am[7]                             ; clk          ; clk         ; 0.000        ; 0.002      ; 0.977      ;
+; 0.712 ; Application:instApp|RDAC[9]                           ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[9]  ; clk          ; clk         ; 0.000        ; -0.004     ; 0.974      ;
+; 0.713 ; Application:instApp|RDAC[15]                          ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[15] ; clk          ; clk         ; 0.000        ; -0.004     ; 0.975      ;
+; 0.714 ; Application:instApp|RDAC[6]                           ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[6]  ; clk          ; clk         ; 0.000        ; -0.004     ; 0.976      ;
+; 0.715 ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[13] ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[14] ; clk          ; clk         ; 0.000        ; -0.002     ; 0.979      ;
+; 0.718 ; Application:instApp|noise[14]                         ; Application:instApp|noise[13]                         ; clk          ; clk         ; 0.000        ; -0.002     ; 0.982      ;
++-------+-------------------------------------------------------+-------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk'                                                                                                                                                                                 ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                                                                                               ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------------------------------------------------------------------------------------------+
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|POLY_ROM:rom|altsyncram:Mux24_rtl_0|altsyncram_h2v:auto_generated|ram_block1a0~porta_address_reg0 ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|POLY_ROM:rom|altsyncram:Mux24_rtl_0|altsyncram_h2v:auto_generated|ram_block1a0~porta_address_reg0 ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|POLY_ROM:rom|altsyncram:Mux24_rtl_0|altsyncram_h2v:auto_generated|ram_block1a0~porta_address_reg1 ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|POLY_ROM:rom|altsyncram:Mux24_rtl_0|altsyncram_h2v:auto_generated|ram_block1a0~porta_address_reg1 ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|POLY_ROM:rom|altsyncram:Mux24_rtl_0|altsyncram_h2v:auto_generated|ram_block1a0~porta_address_reg2 ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|POLY_ROM:rom|altsyncram:Mux24_rtl_0|altsyncram_h2v:auto_generated|ram_block1a0~porta_address_reg2 ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|POLY_ROM:rom|altsyncram:Mux24_rtl_0|altsyncram_h2v:auto_generated|ram_block1a0~porta_address_reg3 ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|POLY_ROM:rom|altsyncram:Mux24_rtl_0|altsyncram_h2v:auto_generated|ram_block1a0~porta_address_reg3 ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|POLY_ROM:rom|altsyncram:Mux24_rtl_0|altsyncram_h2v:auto_generated|ram_block1a0~porta_address_reg4 ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|POLY_ROM:rom|altsyncram:Mux24_rtl_0|altsyncram_h2v:auto_generated|ram_block1a0~porta_address_reg4 ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|POLY_ROM:rom|altsyncram:Mux24_rtl_0|altsyncram_h2v:auto_generated|ram_block1a0~porta_address_reg5 ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|POLY_ROM:rom|altsyncram:Mux24_rtl_0|altsyncram_h2v:auto_generated|ram_block1a0~porta_address_reg5 ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|xF_1[0]                                                                                           ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|xF_1[0]                                                                                           ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|xF_1[1]                                                                                           ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|xF_1[1]                                                                                           ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|xF_1[2]                                                                                           ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|xF_1[2]                                                                                           ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|xF_1[3]                                                                                           ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|xF_1[3]                                                                                           ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|xF_1[4]                                                                                           ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|xF_1[4]                                                                                           ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|xF_1[5]                                                                                           ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|xF_1[5]                                                                                           ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|xF_1[6]                                                                                           ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|xF_1[6]                                                                                           ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|xF_1[7]                                                                                           ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|xF_1[7]                                                                                           ;
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LDAC[0]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LDAC[0]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LDAC[10]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LDAC[10]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LDAC[11]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LDAC[11]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LDAC[12]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LDAC[12]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LDAC[13]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LDAC[13]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LDAC[14]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LDAC[14]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LDAC[15]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LDAC[15]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LDAC[1]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LDAC[1]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LDAC[2]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LDAC[2]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LDAC[3]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LDAC[3]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LDAC[4]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LDAC[4]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LDAC[5]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LDAC[5]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LDAC[6]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LDAC[6]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LDAC[7]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LDAC[7]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LDAC[8]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LDAC[8]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LDAC[9]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LDAC[9]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LEDR[0]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LEDR[0]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LEDR[10]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LEDR[10]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LEDR[11]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LEDR[11]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LEDR[12]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LEDR[12]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LEDR[13]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LEDR[13]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LEDR[14]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LEDR[14]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LEDR[15]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LEDR[15]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LEDR[16]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LEDR[16]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LEDR[17]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LEDR[17]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LEDR[1]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LEDR[1]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LEDR[2]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LEDR[2]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LEDR[3]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LEDR[3]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LEDR[4]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LEDR[4]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LEDR[5]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LEDR[5]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LEDR[6]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LEDR[6]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LEDR[7]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LEDR[7]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LEDR[8]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LEDR[8]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LEDR[9]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LEDR[9]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|Res_2[0]                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|Res_2[0]                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|Res_2[10]                                                                                         ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; SW[*]     ; clk        ; 11.057 ; 11.057 ; Rise       ; clk             ;
+;  SW[5]    ; clk        ; 9.211  ; 9.211  ; Rise       ; clk             ;
+;  SW[6]    ; clk        ; 10.822 ; 10.822 ; Rise       ; clk             ;
+;  SW[7]    ; clk        ; 11.057 ; 11.057 ; Rise       ; clk             ;
+; adcdat    ; clk        ; 5.920  ; 5.920  ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; SW[*]     ; clk        ; 0.114  ; 0.114  ; Rise       ; clk             ;
+;  SW[5]    ; clk        ; 0.114  ; 0.114  ; Rise       ; clk             ;
+;  SW[6]    ; clk        ; -1.598 ; -1.598 ; Rise       ; clk             ;
+;  SW[7]    ; clk        ; -1.973 ; -1.973 ; Rise       ; clk             ;
+; adcdat    ; clk        ; -5.020 ; -5.020 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; clk        ; 8.912 ; 8.912 ; Rise       ; clk             ;
+;  LEDR[0]  ; clk        ; 8.770 ; 8.770 ; Rise       ; clk             ;
+;  LEDR[1]  ; clk        ; 8.912 ; 8.912 ; Rise       ; clk             ;
+;  LEDR[2]  ; clk        ; 8.713 ; 8.713 ; Rise       ; clk             ;
+;  LEDR[3]  ; clk        ; 8.528 ; 8.528 ; Rise       ; clk             ;
+;  LEDR[4]  ; clk        ; 7.993 ; 7.993 ; Rise       ; clk             ;
+;  LEDR[5]  ; clk        ; 8.508 ; 8.508 ; Rise       ; clk             ;
+;  LEDR[6]  ; clk        ; 8.293 ; 8.293 ; Rise       ; clk             ;
+;  LEDR[7]  ; clk        ; 8.067 ; 8.067 ; Rise       ; clk             ;
+;  LEDR[8]  ; clk        ; 7.562 ; 7.562 ; Rise       ; clk             ;
+;  LEDR[9]  ; clk        ; 7.835 ; 7.835 ; Rise       ; clk             ;
+;  LEDR[10] ; clk        ; 7.810 ; 7.810 ; Rise       ; clk             ;
+;  LEDR[11] ; clk        ; 7.821 ; 7.821 ; Rise       ; clk             ;
+;  LEDR[12] ; clk        ; 7.914 ; 7.914 ; Rise       ; clk             ;
+;  LEDR[13] ; clk        ; 8.076 ; 8.076 ; Rise       ; clk             ;
+;  LEDR[14] ; clk        ; 7.614 ; 7.614 ; Rise       ; clk             ;
+;  LEDR[15] ; clk        ; 7.839 ; 7.839 ; Rise       ; clk             ;
+;  LEDR[16] ; clk        ; 8.333 ; 8.333 ; Rise       ; clk             ;
+;  LEDR[17] ; clk        ; 8.120 ; 8.120 ; Rise       ; clk             ;
+; bclk      ; clk        ; 9.604 ; 9.604 ; Rise       ; clk             ;
+; dacdat    ; clk        ; 9.469 ; 9.469 ; Rise       ; clk             ;
+; mclk      ; clk        ; 8.735 ; 8.735 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; clk        ; 7.562 ; 7.562 ; Rise       ; clk             ;
+;  LEDR[0]  ; clk        ; 8.770 ; 8.770 ; Rise       ; clk             ;
+;  LEDR[1]  ; clk        ; 8.912 ; 8.912 ; Rise       ; clk             ;
+;  LEDR[2]  ; clk        ; 8.713 ; 8.713 ; Rise       ; clk             ;
+;  LEDR[3]  ; clk        ; 8.528 ; 8.528 ; Rise       ; clk             ;
+;  LEDR[4]  ; clk        ; 7.993 ; 7.993 ; Rise       ; clk             ;
+;  LEDR[5]  ; clk        ; 8.508 ; 8.508 ; Rise       ; clk             ;
+;  LEDR[6]  ; clk        ; 8.293 ; 8.293 ; Rise       ; clk             ;
+;  LEDR[7]  ; clk        ; 8.067 ; 8.067 ; Rise       ; clk             ;
+;  LEDR[8]  ; clk        ; 7.562 ; 7.562 ; Rise       ; clk             ;
+;  LEDR[9]  ; clk        ; 7.835 ; 7.835 ; Rise       ; clk             ;
+;  LEDR[10] ; clk        ; 7.810 ; 7.810 ; Rise       ; clk             ;
+;  LEDR[11] ; clk        ; 7.821 ; 7.821 ; Rise       ; clk             ;
+;  LEDR[12] ; clk        ; 7.914 ; 7.914 ; Rise       ; clk             ;
+;  LEDR[13] ; clk        ; 8.076 ; 8.076 ; Rise       ; clk             ;
+;  LEDR[14] ; clk        ; 7.614 ; 7.614 ; Rise       ; clk             ;
+;  LEDR[15] ; clk        ; 7.839 ; 7.839 ; Rise       ; clk             ;
+;  LEDR[16] ; clk        ; 8.333 ; 8.333 ; Rise       ; clk             ;
+;  LEDR[17] ; clk        ; 8.120 ; 8.120 ; Rise       ; clk             ;
+; bclk      ; clk        ; 9.604 ; 9.604 ; Rise       ; clk             ;
+; dacdat    ; clk        ; 9.283 ; 9.283 ; Rise       ; clk             ;
+; mclk      ; clk        ; 8.735 ; 8.735 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------+
+; Fast Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -4.194 ; -470.950      ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.215 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.519 ; -421.760              ;
++-------+--------+-----------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk'                                                                                                                  ;
++--------+----------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                  ; To Node                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
+; -4.194 ; Application:instApp|am[5]  ; Application:instApp|lack[39] ; clk          ; clk         ; 1.000        ; 0.009      ; 5.235      ;
+; -4.159 ; Application:instApp|am[5]  ; Application:instApp|lack[38] ; clk          ; clk         ; 1.000        ; 0.009      ; 5.200      ;
+; -4.143 ; Application:instApp|am[9]  ; Application:instApp|lack[39] ; clk          ; clk         ; 1.000        ; 0.009      ; 5.184      ;
+; -4.140 ; Application:instApp|am[6]  ; Application:instApp|lack[39] ; clk          ; clk         ; 1.000        ; 0.010      ; 5.182      ;
+; -4.124 ; Application:instApp|am[5]  ; Application:instApp|lack[37] ; clk          ; clk         ; 1.000        ; 0.009      ; 5.165      ;
+; -4.109 ; Application:instApp|am[7]  ; Application:instApp|lack[39] ; clk          ; clk         ; 1.000        ; 0.010      ; 5.151      ;
+; -4.108 ; Application:instApp|am[9]  ; Application:instApp|lack[38] ; clk          ; clk         ; 1.000        ; 0.009      ; 5.149      ;
+; -4.105 ; Application:instApp|am[6]  ; Application:instApp|lack[38] ; clk          ; clk         ; 1.000        ; 0.010      ; 5.147      ;
+; -4.089 ; Application:instApp|am[5]  ; Application:instApp|lack[36] ; clk          ; clk         ; 1.000        ; 0.009      ; 5.130      ;
+; -4.074 ; Application:instApp|am[7]  ; Application:instApp|lack[38] ; clk          ; clk         ; 1.000        ; 0.010      ; 5.116      ;
+; -4.073 ; Application:instApp|am[9]  ; Application:instApp|lack[37] ; clk          ; clk         ; 1.000        ; 0.009      ; 5.114      ;
+; -4.071 ; Application:instApp|am[8]  ; Application:instApp|lack[39] ; clk          ; clk         ; 1.000        ; 0.010      ; 5.113      ;
+; -4.070 ; Application:instApp|am[6]  ; Application:instApp|lack[37] ; clk          ; clk         ; 1.000        ; 0.010      ; 5.112      ;
+; -4.039 ; Application:instApp|am[7]  ; Application:instApp|lack[37] ; clk          ; clk         ; 1.000        ; 0.010      ; 5.081      ;
+; -4.038 ; Application:instApp|am[9]  ; Application:instApp|lack[36] ; clk          ; clk         ; 1.000        ; 0.009      ; 5.079      ;
+; -4.036 ; Application:instApp|am[8]  ; Application:instApp|lack[38] ; clk          ; clk         ; 1.000        ; 0.010      ; 5.078      ;
+; -4.035 ; Application:instApp|am[6]  ; Application:instApp|lack[36] ; clk          ; clk         ; 1.000        ; 0.010      ; 5.077      ;
+; -4.032 ; Application:instApp|al[4]  ; Application:instApp|lack[39] ; clk          ; clk         ; 1.000        ; 0.017      ; 5.081      ;
+; -4.007 ; Application:instApp|al[5]  ; Application:instApp|lack[39] ; clk          ; clk         ; 1.000        ; 0.017      ; 5.056      ;
+; -4.004 ; Application:instApp|am[7]  ; Application:instApp|lack[36] ; clk          ; clk         ; 1.000        ; 0.010      ; 5.046      ;
+; -4.001 ; Application:instApp|am[8]  ; Application:instApp|lack[37] ; clk          ; clk         ; 1.000        ; 0.010      ; 5.043      ;
+; -3.997 ; Application:instApp|al[4]  ; Application:instApp|lack[38] ; clk          ; clk         ; 1.000        ; 0.017      ; 5.046      ;
+; -3.995 ; Application:instApp|am[5]  ; Application:instApp|lack[35] ; clk          ; clk         ; 1.000        ; 0.009      ; 5.036      ;
+; -3.979 ; Application:instApp|ar[5]  ; Application:instApp|rack[39] ; clk          ; clk         ; 1.000        ; 0.001      ; 5.012      ;
+; -3.974 ; Application:instApp|am[8]  ; Application:instApp|rack[39] ; clk          ; clk         ; 1.000        ; 0.002      ; 5.008      ;
+; -3.972 ; Application:instApp|al[5]  ; Application:instApp|lack[38] ; clk          ; clk         ; 1.000        ; 0.017      ; 5.021      ;
+; -3.971 ; Application:instApp|am[6]  ; Application:instApp|rack[39] ; clk          ; clk         ; 1.000        ; 0.002      ; 5.005      ;
+; -3.966 ; Application:instApp|am[8]  ; Application:instApp|lack[36] ; clk          ; clk         ; 1.000        ; 0.010      ; 5.008      ;
+; -3.962 ; Application:instApp|al[4]  ; Application:instApp|lack[37] ; clk          ; clk         ; 1.000        ; 0.017      ; 5.011      ;
+; -3.960 ; Application:instApp|am[5]  ; Application:instApp|lack[34] ; clk          ; clk         ; 1.000        ; 0.009      ; 5.001      ;
+; -3.944 ; Application:instApp|ar[5]  ; Application:instApp|rack[38] ; clk          ; clk         ; 1.000        ; 0.001      ; 4.977      ;
+; -3.944 ; Application:instApp|am[10] ; Application:instApp|lack[39] ; clk          ; clk         ; 1.000        ; 0.010      ; 4.986      ;
+; -3.944 ; Application:instApp|am[9]  ; Application:instApp|lack[35] ; clk          ; clk         ; 1.000        ; 0.009      ; 4.985      ;
+; -3.944 ; Application:instApp|ar[4]  ; Application:instApp|rack[39] ; clk          ; clk         ; 1.000        ; 0.001      ; 4.977      ;
+; -3.941 ; Application:instApp|am[6]  ; Application:instApp|lack[35] ; clk          ; clk         ; 1.000        ; 0.010      ; 4.983      ;
+; -3.939 ; Application:instApp|am[8]  ; Application:instApp|rack[38] ; clk          ; clk         ; 1.000        ; 0.002      ; 4.973      ;
+; -3.937 ; Application:instApp|al[5]  ; Application:instApp|lack[37] ; clk          ; clk         ; 1.000        ; 0.017      ; 4.986      ;
+; -3.936 ; Application:instApp|am[6]  ; Application:instApp|rack[38] ; clk          ; clk         ; 1.000        ; 0.002      ; 4.970      ;
+; -3.929 ; Application:instApp|am[5]  ; Application:instApp|rack[39] ; clk          ; clk         ; 1.000        ; 0.001      ; 4.962      ;
+; -3.928 ; Application:instApp|am[11] ; Application:instApp|lack[39] ; clk          ; clk         ; 1.000        ; 0.010      ; 4.970      ;
+; -3.927 ; Application:instApp|al[4]  ; Application:instApp|lack[36] ; clk          ; clk         ; 1.000        ; 0.017      ; 4.976      ;
+; -3.925 ; Application:instApp|am[5]  ; Application:instApp|lack[33] ; clk          ; clk         ; 1.000        ; 0.009      ; 4.966      ;
+; -3.910 ; Application:instApp|am[7]  ; Application:instApp|lack[35] ; clk          ; clk         ; 1.000        ; 0.010      ; 4.952      ;
+; -3.909 ; Application:instApp|ar[5]  ; Application:instApp|rack[37] ; clk          ; clk         ; 1.000        ; 0.001      ; 4.942      ;
+; -3.909 ; Application:instApp|am[10] ; Application:instApp|lack[38] ; clk          ; clk         ; 1.000        ; 0.010      ; 4.951      ;
+; -3.909 ; Application:instApp|am[9]  ; Application:instApp|lack[34] ; clk          ; clk         ; 1.000        ; 0.009      ; 4.950      ;
+; -3.909 ; Application:instApp|am[7]  ; Application:instApp|rack[39] ; clk          ; clk         ; 1.000        ; 0.002      ; 4.943      ;
+; -3.909 ; Application:instApp|ar[4]  ; Application:instApp|rack[38] ; clk          ; clk         ; 1.000        ; 0.001      ; 4.942      ;
+; -3.906 ; Application:instApp|am[6]  ; Application:instApp|lack[34] ; clk          ; clk         ; 1.000        ; 0.010      ; 4.948      ;
+; -3.904 ; Application:instApp|am[8]  ; Application:instApp|rack[37] ; clk          ; clk         ; 1.000        ; 0.002      ; 4.938      ;
+; -3.902 ; Application:instApp|al[5]  ; Application:instApp|lack[36] ; clk          ; clk         ; 1.000        ; 0.017      ; 4.951      ;
+; -3.901 ; Application:instApp|am[6]  ; Application:instApp|rack[37] ; clk          ; clk         ; 1.000        ; 0.002      ; 4.935      ;
+; -3.894 ; Application:instApp|am[5]  ; Application:instApp|rack[38] ; clk          ; clk         ; 1.000        ; 0.001      ; 4.927      ;
+; -3.893 ; Application:instApp|am[11] ; Application:instApp|lack[38] ; clk          ; clk         ; 1.000        ; 0.010      ; 4.935      ;
+; -3.890 ; Application:instApp|am[5]  ; Application:instApp|lack[32] ; clk          ; clk         ; 1.000        ; 0.009      ; 4.931      ;
+; -3.890 ; Application:instApp|al[6]  ; Application:instApp|lack[39] ; clk          ; clk         ; 1.000        ; 0.017      ; 4.939      ;
+; -3.875 ; Application:instApp|am[7]  ; Application:instApp|lack[34] ; clk          ; clk         ; 1.000        ; 0.010      ; 4.917      ;
+; -3.874 ; Application:instApp|ar[5]  ; Application:instApp|rack[36] ; clk          ; clk         ; 1.000        ; 0.001      ; 4.907      ;
+; -3.874 ; Application:instApp|am[10] ; Application:instApp|lack[37] ; clk          ; clk         ; 1.000        ; 0.010      ; 4.916      ;
+; -3.874 ; Application:instApp|am[9]  ; Application:instApp|lack[33] ; clk          ; clk         ; 1.000        ; 0.009      ; 4.915      ;
+; -3.874 ; Application:instApp|am[7]  ; Application:instApp|rack[38] ; clk          ; clk         ; 1.000        ; 0.002      ; 4.908      ;
+; -3.874 ; Application:instApp|ar[4]  ; Application:instApp|rack[37] ; clk          ; clk         ; 1.000        ; 0.001      ; 4.907      ;
+; -3.872 ; Application:instApp|am[8]  ; Application:instApp|lack[35] ; clk          ; clk         ; 1.000        ; 0.010      ; 4.914      ;
+; -3.871 ; Application:instApp|am[6]  ; Application:instApp|lack[33] ; clk          ; clk         ; 1.000        ; 0.010      ; 4.913      ;
+; -3.869 ; Application:instApp|am[8]  ; Application:instApp|rack[36] ; clk          ; clk         ; 1.000        ; 0.002      ; 4.903      ;
+; -3.866 ; Application:instApp|am[6]  ; Application:instApp|rack[36] ; clk          ; clk         ; 1.000        ; 0.002      ; 4.900      ;
+; -3.859 ; Application:instApp|am[5]  ; Application:instApp|rack[37] ; clk          ; clk         ; 1.000        ; 0.001      ; 4.892      ;
+; -3.858 ; Application:instApp|am[11] ; Application:instApp|lack[37] ; clk          ; clk         ; 1.000        ; 0.010      ; 4.900      ;
+; -3.855 ; Application:instApp|am[5]  ; Application:instApp|lack[31] ; clk          ; clk         ; 1.000        ; 0.009      ; 4.896      ;
+; -3.855 ; Application:instApp|al[7]  ; Application:instApp|lack[39] ; clk          ; clk         ; 1.000        ; 0.017      ; 4.904      ;
+; -3.855 ; Application:instApp|al[6]  ; Application:instApp|lack[38] ; clk          ; clk         ; 1.000        ; 0.017      ; 4.904      ;
+; -3.840 ; Application:instApp|am[7]  ; Application:instApp|lack[33] ; clk          ; clk         ; 1.000        ; 0.010      ; 4.882      ;
+; -3.839 ; Application:instApp|am[10] ; Application:instApp|lack[36] ; clk          ; clk         ; 1.000        ; 0.010      ; 4.881      ;
+; -3.839 ; Application:instApp|ar[6]  ; Application:instApp|rack[39] ; clk          ; clk         ; 1.000        ; 0.001      ; 4.872      ;
+; -3.839 ; Application:instApp|am[9]  ; Application:instApp|lack[32] ; clk          ; clk         ; 1.000        ; 0.009      ; 4.880      ;
+; -3.839 ; Application:instApp|am[7]  ; Application:instApp|rack[37] ; clk          ; clk         ; 1.000        ; 0.002      ; 4.873      ;
+; -3.839 ; Application:instApp|ar[4]  ; Application:instApp|rack[36] ; clk          ; clk         ; 1.000        ; 0.001      ; 4.872      ;
+; -3.837 ; Application:instApp|am[8]  ; Application:instApp|lack[34] ; clk          ; clk         ; 1.000        ; 0.010      ; 4.879      ;
+; -3.836 ; Application:instApp|am[6]  ; Application:instApp|lack[32] ; clk          ; clk         ; 1.000        ; 0.010      ; 4.878      ;
+; -3.833 ; Application:instApp|al[4]  ; Application:instApp|lack[35] ; clk          ; clk         ; 1.000        ; 0.017      ; 4.882      ;
+; -3.832 ; Application:instApp|ar[8]  ; Application:instApp|rack[39] ; clk          ; clk         ; 1.000        ; 0.001      ; 4.865      ;
+; -3.825 ; Application:instApp|am[11] ; Application:instApp|rack[39] ; clk          ; clk         ; 1.000        ; 0.002      ; 4.859      ;
+; -3.824 ; Application:instApp|am[5]  ; Application:instApp|rack[36] ; clk          ; clk         ; 1.000        ; 0.001      ; 4.857      ;
+; -3.823 ; Application:instApp|am[11] ; Application:instApp|lack[36] ; clk          ; clk         ; 1.000        ; 0.010      ; 4.865      ;
+; -3.820 ; Application:instApp|am[5]  ; Application:instApp|lack[30] ; clk          ; clk         ; 1.000        ; 0.009      ; 4.861      ;
+; -3.820 ; Application:instApp|al[7]  ; Application:instApp|lack[38] ; clk          ; clk         ; 1.000        ; 0.017      ; 4.869      ;
+; -3.820 ; Application:instApp|al[6]  ; Application:instApp|lack[37] ; clk          ; clk         ; 1.000        ; 0.017      ; 4.869      ;
+; -3.808 ; Application:instApp|al[5]  ; Application:instApp|lack[35] ; clk          ; clk         ; 1.000        ; 0.017      ; 4.857      ;
+; -3.805 ; Application:instApp|am[7]  ; Application:instApp|lack[32] ; clk          ; clk         ; 1.000        ; 0.010      ; 4.847      ;
+; -3.804 ; Application:instApp|ar[7]  ; Application:instApp|rack[39] ; clk          ; clk         ; 1.000        ; 0.001      ; 4.837      ;
+; -3.804 ; Application:instApp|ar[6]  ; Application:instApp|rack[38] ; clk          ; clk         ; 1.000        ; 0.001      ; 4.837      ;
+; -3.804 ; Application:instApp|am[9]  ; Application:instApp|lack[31] ; clk          ; clk         ; 1.000        ; 0.009      ; 4.845      ;
+; -3.804 ; Application:instApp|am[7]  ; Application:instApp|rack[36] ; clk          ; clk         ; 1.000        ; 0.002      ; 4.838      ;
+; -3.802 ; Application:instApp|am[8]  ; Application:instApp|lack[33] ; clk          ; clk         ; 1.000        ; 0.010      ; 4.844      ;
+; -3.801 ; Application:instApp|al[8]  ; Application:instApp|lack[39] ; clk          ; clk         ; 1.000        ; 0.017      ; 4.850      ;
+; -3.801 ; Application:instApp|am[6]  ; Application:instApp|lack[31] ; clk          ; clk         ; 1.000        ; 0.010      ; 4.843      ;
+; -3.798 ; Application:instApp|am[12] ; Application:instApp|rack[39] ; clk          ; clk         ; 1.000        ; 0.002      ; 4.832      ;
+; -3.798 ; Application:instApp|al[4]  ; Application:instApp|lack[34] ; clk          ; clk         ; 1.000        ; 0.017      ; 4.847      ;
+; -3.797 ; Application:instApp|ar[8]  ; Application:instApp|rack[38] ; clk          ; clk         ; 1.000        ; 0.001      ; 4.830      ;
+; -3.790 ; Application:instApp|am[11] ; Application:instApp|rack[38] ; clk          ; clk         ; 1.000        ; 0.002      ; 4.824      ;
++--------+----------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk'                                                                                                                                                                      ;
++-------+-------------------------------------------------------+-------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                             ; To Node                                               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------------------------+-------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; SndDriver:instSndDrv|Ctrl:inst|cntr[0]                ; SndDriver:instSndDrv|Ctrl:inst|cntr[0]                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; SndDriver:instSndDrv|Ctrl:inst|BitCnti[0]             ; SndDriver:instSndDrv|Ctrl:inst|BitCnti[0]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Application:instApp|xr[2]                             ; Application:instApp|xr[2]                             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Application:instApp|x[1]                              ; Application:instApp|x[1]                              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; SndDriver:instSndDrv|Ctrl:inst|SCCnti[0]              ; SndDriver:instSndDrv|Ctrl:inst|SCCnti[0]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; SndDriver:instSndDrv|Ctrl:inst|SCCnti[1]              ; SndDriver:instSndDrv|Ctrl:inst|SCCnti[1]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.236 ; Application:instApp|noise[3]                          ; Application:instApp|noise[2]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.388      ;
+; 0.236 ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[11] ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.388      ;
+; 0.237 ; Application:instApp|noise[1]                          ; Application:instApp|noise[0]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.389      ;
+; 0.237 ; Application:instApp|noise[0]                          ; Application:instApp|noise[15]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.389      ;
+; 0.238 ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[1]  ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.390      ;
+; 0.238 ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[2]  ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.390      ;
+; 0.238 ; Application:instApp|noise[4]                          ; Application:instApp|RDAC[0]                           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.390      ;
+; 0.239 ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[0]   ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[1]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.391      ;
+; 0.239 ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[1]  ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.391      ;
+; 0.240 ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[14] ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.392      ;
+; 0.240 ; SndDriver:instSndDrv|Channel_Mod:inst_left|TXReg[2]   ; SndDriver:instSndDrv|Channel_Mod:inst_left|TXReg[3]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.392      ;
+; 0.240 ; Application:instApp|lack[29]                          ; Application:instApp|LEDR[10]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.392      ;
+; 0.241 ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[2]   ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[3]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.393      ;
+; 0.241 ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[4]   ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[5]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.393      ;
+; 0.241 ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[5]   ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[6]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.393      ;
+; 0.241 ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[12]  ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[13]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.393      ;
+; 0.241 ; SndDriver:instSndDrv|Channel_Mod:inst_left|TXReg[7]   ; SndDriver:instSndDrv|Channel_Mod:inst_left|TXReg[8]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.393      ;
+; 0.241 ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[9]  ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.393      ;
+; 0.242 ; Application:instApp|PSAC:psac_inst|inv_res[1]         ; Application:instApp|PSAC:psac_inst|inv_res[2]         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.394      ;
+; 0.242 ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[8]  ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.394      ;
+; 0.242 ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[13] ; SndDriver:instSndDrv|Channel_Mod:inst_right|ADCi[13]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.394      ;
+; 0.242 ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[3]   ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[4]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.394      ;
+; 0.242 ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[14]  ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[15]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.394      ;
+; 0.242 ; SndDriver:instSndDrv|Channel_Mod:inst_left|TXReg[8]   ; SndDriver:instSndDrv|Channel_Mod:inst_left|TXReg[9]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.394      ;
+; 0.242 ; SndDriver:instSndDrv|Channel_Mod:inst_left|TXReg[12]  ; SndDriver:instSndDrv|Channel_Mod:inst_left|TXReg[13]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.394      ;
+; 0.243 ; Application:instApp|xr[15]                            ; Application:instApp|xr[15]                            ; clk          ; clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.243 ; Application:instApp|xm[15]                            ; Application:instApp|xm[15]                            ; clk          ; clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.243 ; Application:instApp|xl[15]                            ; Application:instApp|xl[15]                            ; clk          ; clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.243 ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[1]   ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.243 ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[7]   ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[8]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.243 ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[8]   ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[9]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.243 ; Application:instApp|LDAC[5]                           ; SndDriver:instSndDrv|Channel_Mod:inst_left|TXReg[5]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.243 ; SndDriver:instSndDrv|Channel_Mod:inst_left|TXReg[14]  ; SndDriver:instSndDrv|Channel_Mod:inst_left|TXReg[15]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.243 ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[6]  ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.243 ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[10] ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.243 ; Application:instApp|rack[9]                           ; Application:instApp|LEDR[0]                           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.243 ; Application:instApp|lack[9]                           ; Application:instApp|LEDR[17]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.244 ; Application:instApp|noise[6]                          ; Application:instApp|LDAC[2]                           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.396      ;
+; 0.245 ; Application:instApp|x[15]                             ; Application:instApp|PSAC:psac_inst|inv_res[1]         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.397      ;
+; 0.245 ; Application:instApp|noise[13]                         ; Application:instApp|noise[12]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.397      ;
+; 0.245 ; Application:instApp|lack[33]                          ; Application:instApp|LEDR[9]                           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.397      ;
+; 0.246 ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[10] ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.398      ;
+; 0.246 ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[12] ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.398      ;
+; 0.246 ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[10]  ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[11]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.398      ;
+; 0.246 ; Application:instApp|noise[10]                         ; Application:instApp|RDAC[6]                           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.398      ;
+; 0.247 ; Application:instApp|noise[6]                          ; Application:instApp|noise[5]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.399      ;
+; 0.247 ; Application:instApp|noise[13]                         ; Application:instApp|RDAC[9]                           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.399      ;
+; 0.249 ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[4]  ; SndDriver:instSndDrv|Channel_Mod:inst_right|ADCi[4]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.401      ;
+; 0.250 ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[4]  ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.402      ;
+; 0.251 ; SndDriver:instSndDrv|Ctrl:inst|BitCnti[4]             ; SndDriver:instSndDrv|Ctrl:inst|BitCnti[4]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.403      ;
+; 0.251 ; Application:instApp|noise[11]                         ; Application:instApp|RDAC[7]                           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.403      ;
+; 0.256 ; Application:instApp|noise[12]                         ; Application:instApp|noise[11]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.408      ;
+; 0.256 ; Application:instApp|noise[11]                         ; Application:instApp|noise[10]                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.408      ;
+; 0.256 ; Application:instApp|noise[12]                         ; Application:instApp|LDAC[8]                           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.408      ;
+; 0.258 ; SndDriver:instSndDrv|Ctrl:inst|SCCnti[0]              ; SndDriver:instSndDrv|Ctrl:inst|SCCnti[1]              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.410      ;
+; 0.262 ; SndDriver:instSndDrv|Ctrl:inst|lrseli                 ; Application:instApp|lrsel_change                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.414      ;
+; 0.263 ; SndDriver:instSndDrv|Ctrl:inst|lrseli                 ; Application:instApp|lrsel_old                         ; clk          ; clk         ; 0.000        ; 0.000      ; 0.415      ;
+; 0.289 ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[5]  ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.441      ;
+; 0.290 ; SndDriver:instSndDrv|Channel_Mod:inst_left|TXReg[0]   ; SndDriver:instSndDrv|Channel_Mod:inst_left|TXReg[1]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.442      ;
+; 0.290 ; Application:instApp|rack[8]                           ; Application:instApp|LEDR[0]                           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.442      ;
+; 0.290 ; Application:instApp|lack[8]                           ; Application:instApp|LEDR[17]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.442      ;
+; 0.291 ; SndDriver:instSndDrv|Channel_Mod:inst_left|TXReg[10]  ; SndDriver:instSndDrv|Channel_Mod:inst_left|TXReg[11]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.443      ;
+; 0.291 ; SndDriver:instSndDrv|Channel_Mod:inst_left|TXReg[11]  ; SndDriver:instSndDrv|Channel_Mod:inst_left|TXReg[12]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.443      ;
+; 0.291 ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[7]  ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.443      ;
+; 0.291 ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[13] ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.443      ;
+; 0.292 ; Application:instApp|lack[32]                          ; Application:instApp|LEDR[9]                           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.444      ;
+; 0.293 ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[14] ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.445      ;
+; 0.293 ; Application:instApp|lrsel_old                         ; Application:instApp|lrsel_change                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.445      ;
+; 0.294 ; SndDriver:instSndDrv|Channel_Mod:inst_left|TXReg[3]   ; SndDriver:instSndDrv|Channel_Mod:inst_left|TXReg[4]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.446      ;
+; 0.296 ; Application:instApp|lack[30]                          ; Application:instApp|LEDR[10]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.448      ;
+; 0.310 ; Application:instApp|PSAC:psac_inst|Res_2[6]           ; Application:instApp|am[6]                             ; clk          ; clk         ; 0.000        ; 0.002      ; 0.464      ;
+; 0.314 ; Application:instApp|RDAC[14]                          ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[14] ; clk          ; clk         ; 0.000        ; -0.001     ; 0.465      ;
+; 0.316 ; Application:instApp|LDAC[4]                           ; SndDriver:instSndDrv|Channel_Mod:inst_left|TXReg[4]   ; clk          ; clk         ; 0.000        ; 0.001      ; 0.469      ;
+; 0.319 ; Application:instApp|PSAC:psac_inst|Res_2[7]           ; Application:instApp|am[7]                             ; clk          ; clk         ; 0.000        ; 0.002      ; 0.473      ;
+; 0.322 ; Application:instApp|RDAC[8]                           ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[8]  ; clk          ; clk         ; 0.000        ; -0.001     ; 0.473      ;
+; 0.324 ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[6]   ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[7]   ; clk          ; clk         ; 0.000        ; -0.002     ; 0.474      ;
+; 0.324 ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[15]  ; SndDriver:instSndDrv|Channel_Mod:inst_left|ADCi[15]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.476      ;
+; 0.324 ; Application:instApp|noise[2]                          ; Application:instApp|noise[1]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.476      ;
+; 0.325 ; Application:instApp|RDAC[9]                           ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[9]  ; clk          ; clk         ; 0.000        ; -0.001     ; 0.476      ;
+; 0.326 ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[13] ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[14] ; clk          ; clk         ; 0.000        ; -0.001     ; 0.477      ;
+; 0.326 ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[9]   ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[10]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.478      ;
+; 0.326 ; Application:instApp|RDAC[6]                           ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[6]  ; clk          ; clk         ; 0.000        ; -0.001     ; 0.477      ;
+; 0.326 ; Application:instApp|RDAC[15]                          ; SndDriver:instSndDrv|Channel_Mod:inst_right|TXReg[15] ; clk          ; clk         ; 0.000        ; -0.001     ; 0.477      ;
+; 0.328 ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[3]  ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.480      ;
+; 0.328 ; Application:instApp|noise[5]                          ; Application:instApp|noise[4]                          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.480      ;
+; 0.329 ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[11] ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.481      ;
+; 0.329 ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[13]  ; SndDriver:instSndDrv|Channel_Mod:inst_left|ADCi[13]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.481      ;
+; 0.329 ; Application:instApp|noise[14]                         ; Application:instApp|noise[13]                         ; clk          ; clk         ; 0.000        ; -0.002     ; 0.479      ;
+; 0.330 ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[0]  ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[1]  ; clk          ; clk         ; 0.000        ; 0.001      ; 0.483      ;
+; 0.330 ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[11]  ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[12]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.482      ;
+; 0.330 ; Application:instApp|noise[14]                         ; Application:instApp|RDAC[10]                          ; clk          ; clk         ; 0.000        ; -0.002     ; 0.480      ;
+; 0.331 ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[6]  ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.483      ;
+; 0.331 ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[7]  ; SndDriver:instSndDrv|Channel_Mod:inst_right|RXReg[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.483      ;
+; 0.331 ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[13]  ; SndDriver:instSndDrv|Channel_Mod:inst_left|RXReg[14]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.483      ;
++-------+-------------------------------------------------------+-------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk'                                                                                                                                                                                 ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                                                                                               ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------------------------------------------------------------------------------------------+
+; -1.519 ; 0.500        ; 2.019          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|xF_1[0]                                                                                           ;
+; -1.519 ; 0.500        ; 2.019          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|xF_1[0]                                                                                           ;
+; -1.519 ; 0.500        ; 2.019          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|xF_1[1]                                                                                           ;
+; -1.519 ; 0.500        ; 2.019          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|xF_1[1]                                                                                           ;
+; -1.519 ; 0.500        ; 2.019          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|xF_1[2]                                                                                           ;
+; -1.519 ; 0.500        ; 2.019          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|xF_1[2]                                                                                           ;
+; -1.519 ; 0.500        ; 2.019          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|xF_1[3]                                                                                           ;
+; -1.519 ; 0.500        ; 2.019          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|xF_1[3]                                                                                           ;
+; -1.519 ; 0.500        ; 2.019          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|xF_1[4]                                                                                           ;
+; -1.519 ; 0.500        ; 2.019          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|xF_1[4]                                                                                           ;
+; -1.519 ; 0.500        ; 2.019          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|xF_1[5]                                                                                           ;
+; -1.519 ; 0.500        ; 2.019          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|xF_1[5]                                                                                           ;
+; -1.519 ; 0.500        ; 2.019          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|xF_1[6]                                                                                           ;
+; -1.519 ; 0.500        ; 2.019          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|xF_1[6]                                                                                           ;
+; -1.519 ; 0.500        ; 2.019          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|xF_1[7]                                                                                           ;
+; -1.519 ; 0.500        ; 2.019          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|xF_1[7]                                                                                           ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|POLY_ROM:rom|altsyncram:Mux24_rtl_0|altsyncram_h2v:auto_generated|ram_block1a0~porta_address_reg0 ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|POLY_ROM:rom|altsyncram:Mux24_rtl_0|altsyncram_h2v:auto_generated|ram_block1a0~porta_address_reg0 ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|POLY_ROM:rom|altsyncram:Mux24_rtl_0|altsyncram_h2v:auto_generated|ram_block1a0~porta_address_reg1 ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|POLY_ROM:rom|altsyncram:Mux24_rtl_0|altsyncram_h2v:auto_generated|ram_block1a0~porta_address_reg1 ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|POLY_ROM:rom|altsyncram:Mux24_rtl_0|altsyncram_h2v:auto_generated|ram_block1a0~porta_address_reg2 ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|POLY_ROM:rom|altsyncram:Mux24_rtl_0|altsyncram_h2v:auto_generated|ram_block1a0~porta_address_reg2 ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|POLY_ROM:rom|altsyncram:Mux24_rtl_0|altsyncram_h2v:auto_generated|ram_block1a0~porta_address_reg3 ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|POLY_ROM:rom|altsyncram:Mux24_rtl_0|altsyncram_h2v:auto_generated|ram_block1a0~porta_address_reg3 ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|POLY_ROM:rom|altsyncram:Mux24_rtl_0|altsyncram_h2v:auto_generated|ram_block1a0~porta_address_reg4 ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|POLY_ROM:rom|altsyncram:Mux24_rtl_0|altsyncram_h2v:auto_generated|ram_block1a0~porta_address_reg4 ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|POLY_ROM:rom|altsyncram:Mux24_rtl_0|altsyncram_h2v:auto_generated|ram_block1a0~porta_address_reg5 ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|POLY_ROM:rom|altsyncram:Mux24_rtl_0|altsyncram_h2v:auto_generated|ram_block1a0~porta_address_reg5 ;
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LDAC[0]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LDAC[0]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LDAC[10]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LDAC[10]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LDAC[11]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LDAC[11]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LDAC[12]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LDAC[12]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LDAC[13]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LDAC[13]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LDAC[14]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LDAC[14]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LDAC[15]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LDAC[15]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LDAC[1]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LDAC[1]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LDAC[2]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LDAC[2]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LDAC[3]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LDAC[3]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LDAC[4]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LDAC[4]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LDAC[5]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LDAC[5]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LDAC[6]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LDAC[6]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LDAC[7]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LDAC[7]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LDAC[8]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LDAC[8]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LDAC[9]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LDAC[9]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LEDR[0]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LEDR[0]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LEDR[10]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LEDR[10]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LEDR[11]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LEDR[11]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LEDR[12]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LEDR[12]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LEDR[13]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LEDR[13]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LEDR[14]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LEDR[14]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LEDR[15]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LEDR[15]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LEDR[16]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LEDR[16]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LEDR[17]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LEDR[17]                                                                                                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LEDR[1]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LEDR[1]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LEDR[2]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LEDR[2]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LEDR[3]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LEDR[3]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LEDR[4]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LEDR[4]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LEDR[5]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LEDR[5]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LEDR[6]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LEDR[6]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LEDR[7]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LEDR[7]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LEDR[8]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LEDR[8]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|LEDR[9]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|LEDR[9]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|Res_2[0]                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|Res_2[0]                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Application:instApp|PSAC:psac_inst|Res_2[10]                                                                                         ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; SW[*]     ; clk        ; 4.120 ; 4.120 ; Rise       ; clk             ;
+;  SW[5]    ; clk        ; 3.239 ; 3.239 ; Rise       ; clk             ;
+;  SW[6]    ; clk        ; 3.950 ; 3.950 ; Rise       ; clk             ;
+;  SW[7]    ; clk        ; 4.120 ; 4.120 ; Rise       ; clk             ;
+; adcdat    ; clk        ; 3.127 ; 3.127 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; SW[*]     ; clk        ; 0.362  ; 0.362  ; Rise       ; clk             ;
+;  SW[5]    ; clk        ; 0.362  ; 0.362  ; Rise       ; clk             ;
+;  SW[6]    ; clk        ; -0.419 ; -0.419 ; Rise       ; clk             ;
+;  SW[7]    ; clk        ; -0.675 ; -0.675 ; Rise       ; clk             ;
+; adcdat    ; clk        ; -2.705 ; -2.705 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; clk        ; 4.891 ; 4.891 ; Rise       ; clk             ;
+;  LEDR[0]  ; clk        ; 4.788 ; 4.788 ; Rise       ; clk             ;
+;  LEDR[1]  ; clk        ; 4.891 ; 4.891 ; Rise       ; clk             ;
+;  LEDR[2]  ; clk        ; 4.741 ; 4.741 ; Rise       ; clk             ;
+;  LEDR[3]  ; clk        ; 4.740 ; 4.740 ; Rise       ; clk             ;
+;  LEDR[4]  ; clk        ; 4.465 ; 4.465 ; Rise       ; clk             ;
+;  LEDR[5]  ; clk        ; 4.659 ; 4.659 ; Rise       ; clk             ;
+;  LEDR[6]  ; clk        ; 4.569 ; 4.569 ; Rise       ; clk             ;
+;  LEDR[7]  ; clk        ; 4.495 ; 4.495 ; Rise       ; clk             ;
+;  LEDR[8]  ; clk        ; 4.211 ; 4.211 ; Rise       ; clk             ;
+;  LEDR[9]  ; clk        ; 4.340 ; 4.340 ; Rise       ; clk             ;
+;  LEDR[10] ; clk        ; 4.331 ; 4.331 ; Rise       ; clk             ;
+;  LEDR[11] ; clk        ; 4.339 ; 4.339 ; Rise       ; clk             ;
+;  LEDR[12] ; clk        ; 4.383 ; 4.383 ; Rise       ; clk             ;
+;  LEDR[13] ; clk        ; 4.463 ; 4.463 ; Rise       ; clk             ;
+;  LEDR[14] ; clk        ; 4.310 ; 4.310 ; Rise       ; clk             ;
+;  LEDR[15] ; clk        ; 4.412 ; 4.412 ; Rise       ; clk             ;
+;  LEDR[16] ; clk        ; 4.587 ; 4.587 ; Rise       ; clk             ;
+;  LEDR[17] ; clk        ; 4.495 ; 4.495 ; Rise       ; clk             ;
+; bclk      ; clk        ; 5.188 ; 5.188 ; Rise       ; clk             ;
+; dacdat    ; clk        ; 5.148 ; 5.148 ; Rise       ; clk             ;
+; mclk      ; clk        ; 4.832 ; 4.832 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; clk        ; 4.211 ; 4.211 ; Rise       ; clk             ;
+;  LEDR[0]  ; clk        ; 4.788 ; 4.788 ; Rise       ; clk             ;
+;  LEDR[1]  ; clk        ; 4.891 ; 4.891 ; Rise       ; clk             ;
+;  LEDR[2]  ; clk        ; 4.741 ; 4.741 ; Rise       ; clk             ;
+;  LEDR[3]  ; clk        ; 4.740 ; 4.740 ; Rise       ; clk             ;
+;  LEDR[4]  ; clk        ; 4.465 ; 4.465 ; Rise       ; clk             ;
+;  LEDR[5]  ; clk        ; 4.659 ; 4.659 ; Rise       ; clk             ;
+;  LEDR[6]  ; clk        ; 4.569 ; 4.569 ; Rise       ; clk             ;
+;  LEDR[7]  ; clk        ; 4.495 ; 4.495 ; Rise       ; clk             ;
+;  LEDR[8]  ; clk        ; 4.211 ; 4.211 ; Rise       ; clk             ;
+;  LEDR[9]  ; clk        ; 4.340 ; 4.340 ; Rise       ; clk             ;
+;  LEDR[10] ; clk        ; 4.331 ; 4.331 ; Rise       ; clk             ;
+;  LEDR[11] ; clk        ; 4.339 ; 4.339 ; Rise       ; clk             ;
+;  LEDR[12] ; clk        ; 4.383 ; 4.383 ; Rise       ; clk             ;
+;  LEDR[13] ; clk        ; 4.463 ; 4.463 ; Rise       ; clk             ;
+;  LEDR[14] ; clk        ; 4.310 ; 4.310 ; Rise       ; clk             ;
+;  LEDR[15] ; clk        ; 4.412 ; 4.412 ; Rise       ; clk             ;
+;  LEDR[16] ; clk        ; 4.587 ; 4.587 ; Rise       ; clk             ;
+;  LEDR[17] ; clk        ; 4.495 ; 4.495 ; Rise       ; clk             ;
+; bclk      ; clk        ; 5.188 ; 5.188 ; Rise       ; clk             ;
+; dacdat    ; clk        ; 5.066 ; 5.066 ; Rise       ; clk             ;
+; mclk      ; clk        ; 4.832 ; 4.832 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                             ;
++------------------+-----------+-------+----------+---------+---------------------+
+; Clock            ; Setup     ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+-----------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -12.038   ; 0.215 ; N/A      ; N/A     ; -1.519              ;
+;  clk             ; -12.038   ; 0.215 ; N/A      ; N/A     ; -1.519              ;
+; Design-wide TNS  ; -1591.936 ; 0.0   ; 0.0      ; 0.0     ; -421.76             ;
+;  clk             ; -1591.936 ; 0.000 ; N/A      ; N/A     ; -421.760            ;
++------------------+-----------+-------+----------+---------+---------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; SW[*]     ; clk        ; 11.057 ; 11.057 ; Rise       ; clk             ;
+;  SW[5]    ; clk        ; 9.211  ; 9.211  ; Rise       ; clk             ;
+;  SW[6]    ; clk        ; 10.822 ; 10.822 ; Rise       ; clk             ;
+;  SW[7]    ; clk        ; 11.057 ; 11.057 ; Rise       ; clk             ;
+; adcdat    ; clk        ; 5.920  ; 5.920  ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; SW[*]     ; clk        ; 0.362  ; 0.362  ; Rise       ; clk             ;
+;  SW[5]    ; clk        ; 0.362  ; 0.362  ; Rise       ; clk             ;
+;  SW[6]    ; clk        ; -0.419 ; -0.419 ; Rise       ; clk             ;
+;  SW[7]    ; clk        ; -0.675 ; -0.675 ; Rise       ; clk             ;
+; adcdat    ; clk        ; -2.705 ; -2.705 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; clk        ; 8.912 ; 8.912 ; Rise       ; clk             ;
+;  LEDR[0]  ; clk        ; 8.770 ; 8.770 ; Rise       ; clk             ;
+;  LEDR[1]  ; clk        ; 8.912 ; 8.912 ; Rise       ; clk             ;
+;  LEDR[2]  ; clk        ; 8.713 ; 8.713 ; Rise       ; clk             ;
+;  LEDR[3]  ; clk        ; 8.528 ; 8.528 ; Rise       ; clk             ;
+;  LEDR[4]  ; clk        ; 7.993 ; 7.993 ; Rise       ; clk             ;
+;  LEDR[5]  ; clk        ; 8.508 ; 8.508 ; Rise       ; clk             ;
+;  LEDR[6]  ; clk        ; 8.293 ; 8.293 ; Rise       ; clk             ;
+;  LEDR[7]  ; clk        ; 8.067 ; 8.067 ; Rise       ; clk             ;
+;  LEDR[8]  ; clk        ; 7.562 ; 7.562 ; Rise       ; clk             ;
+;  LEDR[9]  ; clk        ; 7.835 ; 7.835 ; Rise       ; clk             ;
+;  LEDR[10] ; clk        ; 7.810 ; 7.810 ; Rise       ; clk             ;
+;  LEDR[11] ; clk        ; 7.821 ; 7.821 ; Rise       ; clk             ;
+;  LEDR[12] ; clk        ; 7.914 ; 7.914 ; Rise       ; clk             ;
+;  LEDR[13] ; clk        ; 8.076 ; 8.076 ; Rise       ; clk             ;
+;  LEDR[14] ; clk        ; 7.614 ; 7.614 ; Rise       ; clk             ;
+;  LEDR[15] ; clk        ; 7.839 ; 7.839 ; Rise       ; clk             ;
+;  LEDR[16] ; clk        ; 8.333 ; 8.333 ; Rise       ; clk             ;
+;  LEDR[17] ; clk        ; 8.120 ; 8.120 ; Rise       ; clk             ;
+; bclk      ; clk        ; 9.604 ; 9.604 ; Rise       ; clk             ;
+; dacdat    ; clk        ; 9.469 ; 9.469 ; Rise       ; clk             ;
+; mclk      ; clk        ; 8.735 ; 8.735 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; LEDR[*]   ; clk        ; 4.211 ; 4.211 ; Rise       ; clk             ;
+;  LEDR[0]  ; clk        ; 4.788 ; 4.788 ; Rise       ; clk             ;
+;  LEDR[1]  ; clk        ; 4.891 ; 4.891 ; Rise       ; clk             ;
+;  LEDR[2]  ; clk        ; 4.741 ; 4.741 ; Rise       ; clk             ;
+;  LEDR[3]  ; clk        ; 4.740 ; 4.740 ; Rise       ; clk             ;
+;  LEDR[4]  ; clk        ; 4.465 ; 4.465 ; Rise       ; clk             ;
+;  LEDR[5]  ; clk        ; 4.659 ; 4.659 ; Rise       ; clk             ;
+;  LEDR[6]  ; clk        ; 4.569 ; 4.569 ; Rise       ; clk             ;
+;  LEDR[7]  ; clk        ; 4.495 ; 4.495 ; Rise       ; clk             ;
+;  LEDR[8]  ; clk        ; 4.211 ; 4.211 ; Rise       ; clk             ;
+;  LEDR[9]  ; clk        ; 4.340 ; 4.340 ; Rise       ; clk             ;
+;  LEDR[10] ; clk        ; 4.331 ; 4.331 ; Rise       ; clk             ;
+;  LEDR[11] ; clk        ; 4.339 ; 4.339 ; Rise       ; clk             ;
+;  LEDR[12] ; clk        ; 4.383 ; 4.383 ; Rise       ; clk             ;
+;  LEDR[13] ; clk        ; 4.463 ; 4.463 ; Rise       ; clk             ;
+;  LEDR[14] ; clk        ; 4.310 ; 4.310 ; Rise       ; clk             ;
+;  LEDR[15] ; clk        ; 4.412 ; 4.412 ; Rise       ; clk             ;
+;  LEDR[16] ; clk        ; 4.587 ; 4.587 ; Rise       ; clk             ;
+;  LEDR[17] ; clk        ; 4.495 ; 4.495 ; Rise       ; clk             ;
+; bclk      ; clk        ; 5.188 ; 5.188 ; Rise       ; clk             ;
+; dacdat    ; clk        ; 5.066 ; 5.066 ; Rise       ; clk             ;
+; mclk      ; clk        ; 4.832 ; 4.832 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 2863748  ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 2863748  ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 5     ; 5    ;
+; Unconstrained Input Port Paths  ; 343   ; 343  ;
+; Unconstrained Output Ports      ; 21    ; 21   ;
+; Unconstrained Output Port Paths ; 23    ; 23   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 12.1 Build 243 01/31/2013 Service Pack 1.33 SJ Full Version
+    Info: Processing started: Sat Sep 27 16:21:19 2014
+Info: Command: quartus_sta Sound -c Sound
+Info: qsta_default_script.tcl version: #1
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'Sound.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -12.038
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):   -12.038     -1591.936 clk 
+Info (332146): Worst-case hold slack is 0.391
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.391         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.423
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.423      -420.224 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -4.194
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -4.194      -470.950 clk 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.519
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.519      -421.760 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 459 megabytes
+    Info: Processing ended: Sat Sep 27 16:21:28 2014
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:02
+
+

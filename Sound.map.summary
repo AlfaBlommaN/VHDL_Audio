@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sat Sep 27 16:20:53 2014
+Quartus II 64-Bit Version : 12.1 Build 243 01/31/2013 SP 1.33 SJ Full Version
+Revision Name : Sound
+Top-level Entity Name : Sound
+Family : Cyclone II
+Total logic elements : 633
+    Total combinational functions : 527
+    Dedicated logic registers : 387
+Total registers : 387
+Total pins : 43
+Total virtual pins : 0
+Total memory bits : 1,600
+Embedded Multiplier 9-bit elements : 6
+Total PLLs : 0

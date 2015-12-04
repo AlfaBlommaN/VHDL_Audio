@@ -1,0 +1,40 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+entity Channel_Mod is
+	port 
+	(
+		clk				: in std_logic;
+		rstn				: in std_logic;
+		men				: in std_logic;
+		sel 				: in std_logic; -- signal for select
+		BitCnt			: in unsigned	(4 downto 0);
+		SCCnt				: in unsigned	(1 downto 0);
+		DAC				: in signed		(15 downto 0);
+		adcdat			: in	std_logic; -- Unsure about WL
+		ADC				: out signed 	(15 downto 0);
+		dacdat			: out	std_logic  -- About WL.
+	);
+end Channel_Mod;
+
+
+-- Three possible architectures
+architecture behave of Channel_Mod is
+signal RXReg,TXReg : unsigned(15 downto 0);
+begin
+
+process(clk,rstn)
+begin
+	if(rstn = '1') then
+		RXReg <=	 (others => '0');
+		TXReg <=  (others => '0');
+	elsif rising_edge(clk) then
+		
+		if((SCCNT = "01") and men) then
+		end if;
+				
+	end if;
+
+end process;
+
+end behave;

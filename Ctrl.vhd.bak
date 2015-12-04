@@ -1,0 +1,22 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+entity Ctrl is
+	port 
+	(
+		clk				: in std_logic;
+		lrsel 			: in std_logic;
+		men				: out std_logic;
+		mclkr,bclk 		: out std_logic;
+		adclrc,daclrc 	: out std_logic;
+		BitCnt			: out unsigned(4 downto 0);
+		SCCnt				: out unsigned(1 downto 0)
+	);
+end Ctrl;
+
+
+-- Three possible architectures
+architecture inst_ctrl of Ctrl is
+begin
+
+end inst_ctrl;
